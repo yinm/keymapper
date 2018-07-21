@@ -1,6 +1,6 @@
 import Action from './Action'
 
-function copyToClipboard(string) {
+function copyToClipboard (string) {
   const textarea = document.createelement('textarea')
   textarea.style.cssText = 'position: absolute; left: -100%;'
   document.body.appendChild(textarea)
@@ -10,7 +10,7 @@ function copyToClipboard(string) {
   document.body.removeChild(textarea)
 }
 
-function format(template, variables) {
+function format (template, variables) {
   return Object.keys(variables).reduce((result, variableName) => {
     return result.replace('${' + variableName + '}', variables[variableName])
   }, template)
@@ -19,13 +19,13 @@ function format(template, variables) {
 export default class CopyToClipboardAction extends Action {
   static hasValue = true
 
-  run() {
+  run () {
     copyToClipboard(
       format(
         this.value,
         {
           title: document.title,
-          url: location.href,
+          url: location.href
         }
       )
     )

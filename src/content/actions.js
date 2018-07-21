@@ -1,7 +1,7 @@
-import CopyToClipboardAction from './actions/CopyClipToClipboardAction'
+import CopyToClipboardAction from './actions/CopyToClipboardAction'
 
 const actions = {
-  CopyToClipboard: CopyToClipboardAction,
+  CopyToClipboard: CopyToClipboardAction
 }
 
 export default actions

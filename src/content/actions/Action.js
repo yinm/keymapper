@@ -1,7 +1,7 @@
 export default class Action {
-  constructor({ value }) {
+  constructor ({ value }) {
     this.value = value
   }
 
-  run() {}
+  run () {}
 }
