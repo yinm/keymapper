@@ -1,0 +1,42 @@
+{
+  "name": "keymapper",
+  "description": "mapping key and action",
+  "version": "0.0.1",
+  "author": "yinm",
+  "manifest_version": 2,
+  "icons": {
+    "16": "icons/16.png",
+    "19": "icons/19.png",
+    "48": "icons/48.png",
+    "128": "icons/128.png"
+  },
+  "permissions": [
+    "clipboardRead",
+    "storage"
+  ],
+  "browser_action": {
+    "default_icon": {
+      "16": "icons/16.png"
+    },
+    "default_title": "keymapper"
+  },
+  "background": {
+    "scripts": [
+      "js/background.js"
+    ],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "js": [
+        "js/content.js"
+      ],
+      "run_at": "document_start",
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ],
+  "options_page": "pages/options.html",
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self';"
+}
