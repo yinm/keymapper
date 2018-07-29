@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Header />
     <table>
       <tbody>
         <key-setting
@@ -18,10 +19,12 @@
 <script>
 import KeySetting from './KeySetting'
 import InputKeySetting from './InputKeySetting'
+import Header from './Header'
 
 export default {
   name: 'Option',
   components: {
+    Header,
     InputKeySetting,
     KeySetting,
   },
