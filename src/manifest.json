@@ -5,10 +5,10 @@
   "author": "yinm",
   "manifest_version": 2,
   "icons": {
-    "16": "images/16.png",
-    "19": "images/19.png",
-    "48": "images/48.png",
-    "128": "images/128.png"
+    "16": "icons/16.png",
+    "19": "icons/19.png",
+    "48": "icons/48.png",
+    "128": "icons/128.png"
   },
   "permissions": [
     "clipboardRead",
@@ -16,7 +16,7 @@
   ],
   "browser_action": {
     "default_icon": {
-      "16": "images/16.png"
+      "16": "icons/16.png"
     },
     "default_title": "keymapper"
   },
