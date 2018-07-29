@@ -7,3 +7,9 @@ export default {
   name: 'Header',
 }
 </script>
+
+<style scoped>
+h1 {
+  padding: 30px;
+}
+</style>
