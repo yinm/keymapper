@@ -1,4 +1,5 @@
 const path = require('path')
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports = (env, argv) => {
   const IS_DEVELOPMENT = argv.mode === 'development'
@@ -21,7 +22,21 @@ module.exports = (env, argv) => {
           exclude: /node_modules/,
           use: { loader: 'babel-loader' },
         },
+        {
+          test: /\.vue$/,
+          use: { loader: 'vue-loader' },
+        },
       ],
     },
+    resolve: {
+      modules: [path.join(__dirname, 'src'), 'node_modules'],
+      extensions: ['.js', '.vue'],
+      alias: {
+        'vue$': 'vue/dist/vue.esm.js'
+      },
+    },
+    plugins: [
+      new VueLoaderPlugin(),
+    ],
   }
 }
