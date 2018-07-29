@@ -26,6 +26,13 @@ module.exports = (env, argv) => {
           test: /\.vue$/,
           use: { loader: 'vue-loader' },
         },
+        {
+          test: /\.css$/,
+          use: [
+            'vue-style-loader',
+            'css-loader',
+          ],
+        },
       ],
     },
     resolve: {
