@@ -4,7 +4,10 @@
   "description": "chrome extension",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "npm run build:clean && npm run build:copy && webpack --mode development",
+    "build": "npm run build:clean && npm run build:copy && webpack --mode production",
+    "build:clean": "rm -rf ./dist || true && mkdir -p ./dist",
+    "build:copy": "cp -r ./src/images ./src/manifest.json ./dist",
   },
   "repository": {
     "type": "git",
