@@ -11,32 +11,50 @@
         />
       </tbody>
     </table>
+    <input-key-setting @on-submit="onSubmit" />
   </div>
 </template>
 
 <script>
-  import KeySetting from './KeySetting'
+import KeySetting from './KeySetting'
+import InputKeySetting from './InputKeySetting'
 
-  export default {
-    name: 'option',
-    components: {KeySetting},
-    data() {
-      return {
-        settings: {
-          actionDefinitions: {},
-        },
-      }
-    },
-    mounted() {
-      chrome.storage.sync.get('settings', ({ settings }) => {
-        this.settings = settings
-      })
-    },
-    methods: {
-      onDelete(keyString) {
-        this.$delete(this.settings.actionDefinitions, keyString)
-        chrome.storage.sync.set({ settings: this.settings })
+export default {
+  name: 'Option',
+  components: {
+    InputKeySetting,
+    KeySetting,
+  },
+  data() {
+    return {
+      settings: {
+        actionDefinitions: {},
       },
     }
-  }
+  },
+  mounted() {
+    chrome.storage.sync.get('settings', ({ settings }) => {
+      this.settings = settings
+    })
+  },
+  methods: {
+    onDelete(keyString) {
+      this.$delete(this.settings.actionDefinitions, keyString)
+      chrome.storage.sync.set({ settings: this.settings })
+    },
+
+    onSubmit(keyString, type, value) {
+      this.$set(
+        this.settings.actionDefinitions,
+        keyString,
+        {
+          type: type,
+          value: value,
+        }
+      )
+
+      chrome.storage.sync.set({ settings: this.settings })
+    },
+  },
+}
 </script>
