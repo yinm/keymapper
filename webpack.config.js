@@ -6,6 +6,7 @@ module.exports = (env, argv) => {
   return {
     entry: {
       background: './src/background/index.js',
+      content: './src/content/index.js',
     },
     output: {
       filename: '[name].js',
