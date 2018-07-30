@@ -3,13 +3,13 @@
     <Header />
     <table>
       <tbody>
-        <key-setting
-          v-for="keyString in Object.keys(settings.actionDefinitions)"
-          :key="keyString"
-          :key-string="keyString"
-          :action-definitions="settings.actionDefinitions[keyString]"
-          @on-delete="onDelete"
-        />
+      <key-setting
+        v-for="keyString in Object.keys(settings.actionDefinitions)"
+        :key="keyString"
+        :key-string="keyString"
+        :action-definitions="settings.actionDefinitions[keyString]"
+        @on-delete="onDelete"
+      />
       </tbody>
     </table>
     <input-key-setting @on-submit="onSubmit" />
@@ -61,3 +61,10 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+  table {
+    margin: 30px auto 0;
+    border-collapse: collapse;
+  }
+</style>
