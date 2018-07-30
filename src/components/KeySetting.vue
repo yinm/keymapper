@@ -33,3 +33,11 @@
     },
   }
 </script>
+
+<style scoped>
+  td {
+    padding: 20px 70px;
+    border: 1px solid #fff;
+    background-color: #fff;
+  }
+</style>
