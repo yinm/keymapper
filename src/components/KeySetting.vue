@@ -35,9 +35,10 @@
 </script>
 
 <style scoped>
+  tr {
+    border-top: 1px solid #ddd;
+  }
   td {
     padding: 20px 70px;
-    border: 1px solid #fff;
-    background-color: #fff;
   }
 </style>

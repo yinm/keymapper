@@ -1,18 +1,20 @@
 <template>
   <div>
     <Header />
-    <table>
-      <tbody>
-      <key-setting
-        v-for="keyString in Object.keys(settings.actionDefinitions)"
-        :key="keyString"
-        :key-string="keyString"
-        :action-definitions="settings.actionDefinitions[keyString]"
-        @on-delete="onDelete"
-      />
-      </tbody>
-    </table>
-    <input-key-setting @on-submit="onSubmit" />
+    <main>
+      <table>
+        <tbody>
+        <key-setting
+          v-for="keyString in Object.keys(settings.actionDefinitions)"
+          :key="keyString"
+          :key-string="keyString"
+          :action-definitions="settings.actionDefinitions[keyString]"
+          @on-delete="onDelete"
+        />
+        </tbody>
+      </table>
+      <input-key-setting @on-submit="onSubmit" />
+    </main>
   </div>
 </template>
 
@@ -63,8 +65,15 @@ export default {
 </script>
 
 <style scoped>
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
   table {
-    margin: 30px auto 0;
+    display: flex;
+    background-color: #fff;
+    justify-content: space-evenly;
+    margin-top: 30px;
     border-collapse: collapse;
   }
 </style>
