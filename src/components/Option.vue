@@ -1,8 +1,9 @@
 <template>
   <div>
     <Header />
-    <table>
-      <tbody>
+    <main>
+      <table>
+        <tbody>
         <key-setting
           v-for="keyString in Object.keys(settings.actionDefinitions)"
           :key="keyString"
@@ -10,9 +11,10 @@
           :action-definitions="settings.actionDefinitions[keyString]"
           @on-delete="onDelete"
         />
-      </tbody>
-    </table>
-    <input-key-setting @on-submit="onSubmit" />
+        </tbody>
+      </table>
+      <input-key-setting @on-submit="onSubmit" />
+    </main>
   </div>
 </template>
 
@@ -61,3 +63,17 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  table {
+    display: flex;
+    background-color: #fff;
+    justify-content: space-evenly;
+    margin-top: 30px;
+    border-collapse: collapse;
+  }
+</style>

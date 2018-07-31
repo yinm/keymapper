@@ -33,3 +33,12 @@
     },
   }
 </script>
+
+<style scoped>
+  tr {
+    border-top: 1px solid #ddd;
+  }
+  td {
+    padding: 20px 70px;
+  }
+</style>
