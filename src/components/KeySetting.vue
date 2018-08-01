@@ -40,5 +40,6 @@
   }
   td {
     padding: 20px 70px;
+    font-size: 1rem;
   }
 </style>
