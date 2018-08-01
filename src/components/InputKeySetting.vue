@@ -66,6 +66,7 @@ export default {
     font-size: 1rem;
   }
   .submit {
+    margin-top: 20px;
     padding: 5px 20px;
     border: 2px solid #6D9EE1;
     border-radius: 5px;
