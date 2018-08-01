@@ -9,7 +9,8 @@
     <div>
       <label>
         Value<br>
-        <input type="text" @change="onChange" :value="value" required class="input" />
+        <input type="text" @change="onChange" :value="value" required class="input" /><br>
+        <p>${title} and ${url} variables are available.</p>
       </label>
     </div>
     <div>
@@ -69,5 +70,8 @@ export default {
     border-radius: 5px;
     background-color: #6D9EE1;
     color: #fff;
+  }
+  p {
+    color: #888;
   }
 </style>
