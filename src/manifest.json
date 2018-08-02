@@ -1,6 +1,6 @@
 {
   "name": "keymapper",
-  "description": "mapping key and action",
+  "description": "Set hotkeys",
   "version": "0.0.1",
   "author": "yinm",
   "manifest_version": 2,
