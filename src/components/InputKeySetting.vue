@@ -2,14 +2,15 @@
   <form @submit="onSubmit">
     <div>
       <label>
-        Key<br>
+        <p class="label">Key</p>
         <input type="text" @keydown="onKeyDown" :value="keyString" required class="input" />
       </label>
     </div>
     <div>
       <label>
-        Value<br>
-        <input type="text" @change="onChange" :value="value" required class="input" />
+        <p class="label">Value</p>
+        <input type="text" @change="onChange" :value="value" required class="input" /><br>
+        <p class="annotation">${title} and ${url} variables are available.</p>
       </label>
     </div>
     <div>
@@ -58,16 +59,25 @@ export default {
   div {
     width: 798px;
     margin: 0 auto;
-    padding: 20px 0;
   }
   .input {
+    height: 20px;
     width: 100%;
+    font-size: 1rem;
   }
   .submit {
+    margin-top: 20px;
     padding: 5px 20px;
     border: 2px solid #6D9EE1;
     border-radius: 5px;
     background-color: #6D9EE1;
     color: #fff;
+  }
+  .label {
+    font-size: 1rem;
+    margin: 25px 0 10px;
+  }
+  .annotation {
+    color: #888;
   }
 </style>

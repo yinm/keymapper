@@ -15,7 +15,8 @@ export default {
   background-color: #fff;
 }
 h1 {
-  margin: 0;
+  margin: 0 auto;
+  max-width: 1200px;
   padding: 60px 30px;
   font-weight: normal;
   letter-spacing: 1.2px;
