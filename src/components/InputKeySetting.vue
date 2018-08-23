@@ -8,6 +8,16 @@
     </div>
     <div>
       <label>
+        <p class="label">Action</p>
+        <select type="select" @change="onChangeActionType" :value="actionType" required class="input">
+          <option v-for="(action, key) in actions">
+            {{ key }}
+          </option>
+        </select>
+      </label>
+    </div>
+    <div>
+      <label>
         <p class="label">Value</p>
         <input type="text" @change="onChange" :value="value" required class="input" /><br>
         <p class="annotation">${title} and ${url} variables are available.</p>
@@ -21,19 +31,22 @@
 
 <script>
 import { detectKeyString } from 'key-string'
+import actions from '../content/actions/index'
 
 export default {
   name: 'InputKeySetting',
   data() {
     return {
       keyString: '',
+      actionType: '',
       value: '',
+      actions,
     }
   },
   methods: {
     onSubmit(e) {
       e.preventDefault()
-      this.$emit('on-submit', this.keyString, 'CopyToClipboard', this.value)
+      this.$emit('on-submit', this.keyString, this.actionType, this.value)
     },
 
     onKeyDown(e) {
@@ -41,6 +54,10 @@ export default {
       if (!keyString.includes('Unknown')) {
         this.keyString = keyString
       }
+    },
+
+    onChangeActionType(e) {
+      this.actionType = e.target.value
     },
 
     onChange(e) {
