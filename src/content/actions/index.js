@@ -4,8 +4,8 @@ import ScrollUpAction from './ScrollUpAction'
 
 const actions = {
   CopyToClipboard: CopyToClipboardAction,
-  ScrollDownAction: ScrollDownAction,
   ScrollUpAction: ScrollUpAction,
+  ScrollDownAction: ScrollDownAction,
 }
 
 export default actions
