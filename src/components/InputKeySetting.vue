@@ -10,6 +10,7 @@
       <label>
         <p class="label">Action</p>
         <select type="select" @change="onChangeActionType" :value="actionType" required class="input">
+          <option disabled value="">Please select one</option>
           <option v-for="(action, key) in actions">
             {{ key }}
           </option>
