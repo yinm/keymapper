@@ -10,13 +10,14 @@
       <label>
         <p class="label">Action</p>
         <select type="select" @change="onChangeActionType" :value="actionType" required class="input">
+          <option disabled value="">Please select one</option>
           <option v-for="(action, key) in actions">
             {{ key }}
           </option>
         </select>
       </label>
     </div>
-    <div>
+    <div v-if="actions[actionType] && actions[actionType].hasValue()">
       <label>
         <p class="label">Value</p>
         <input type="text" @change="onChange" :value="value" required class="input" /><br>

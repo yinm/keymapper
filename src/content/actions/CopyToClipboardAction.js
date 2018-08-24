@@ -1,6 +1,10 @@
 import Action from './Action'
 
 export default class CopyToClipboardAction extends Action {
+  static hasValue() {
+    return true
+  }
+
   run() {
     copyToClipboard(
       format(
