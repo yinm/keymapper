@@ -33,7 +33,7 @@
     "eslint-config-prettier": "2.9.0",
     "eslint-plugin-prettier": "2.6.2",
     "eslint-plugin-vue": "4.7.1",
-    "prettier": "1.13.7",
+    "prettier": "1.14.2",
     "vue-loader": "15.2.6",
     "vue-style-loader": "4.1.1",
     "vue-template-compiler": "2.5.16",
