@@ -13,6 +13,18 @@ chrome.runtime.onInstalled.addListener(() => {
         value: '[${title}](${url})',
         type: 'CopyToClipboard',
       },
+      'Ctrl+J': {
+        type: 'ScrollDownAction',
+      },
+      'Ctrl+K': {
+        type: 'ScrollUpAction',
+      },
+      'Ctrl+G': {
+        type: 'ScrollToTop',
+      },
+      'Shift+G': {
+        type: 'ScrollToBottom',
+      },
     },
   }
 
