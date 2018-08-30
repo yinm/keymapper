@@ -25,6 +25,7 @@
     "vue": "^2.5.17"
   },
   "devDependencies": {
+    "@types/chrome": "0.0.72",
     "babel-core": "6.26.3",
     "babel-loader": "7.1.5",
     "babel-preset-env": "1.7.0",
