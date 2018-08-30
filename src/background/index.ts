@@ -1,5 +1,9 @@
+interface Settings {
+  actionDefinitions: {}
+}
+
 chrome.runtime.onInstalled.addListener(() => {
-  const defaultSettings = {
+  const defaultSettings: Settings = {
     actionDefinitions: {
       'Ctrl+L': {
         value: '${title}\n${url}',

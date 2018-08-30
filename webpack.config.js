@@ -6,9 +6,9 @@ module.exports = (env, argv) => {
 
   return {
     entry: {
-      background: './src/background/index.js',
-      content: './src/content/index.js',
-      options: './src/options/index.js',
+      background: './src/background/index.ts',
+      content: './src/content/index.ts',
+      options: './src/options/index.ts',
     },
     output: {
       filename: '[name].js',
@@ -19,12 +19,8 @@ module.exports = (env, argv) => {
       rules: [
         {
           test: /\.ts$/,
-          use: 'ts-loader',
-        },
-        {
-          test: /\.js$/,
           exclude: /node_modules/,
-          use: { loader: 'babel-loader' },
+          use: 'ts-loader',
         },
         {
           test: /\.vue$/,
