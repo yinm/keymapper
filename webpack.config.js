@@ -6,9 +6,9 @@ module.exports = (env, argv) => {
 
   return {
     entry: {
-      background: './src/background/index.js',
-      content: './src/content/index.js',
-      options: './src/options/index.js',
+      background: './src/background/index.ts',
+      content: './src/content/index.ts',
+      options: './src/options/index.ts',
     },
     output: {
       filename: '[name].js',
@@ -18,9 +18,9 @@ module.exports = (env, argv) => {
     module: {
       rules: [
         {
-          test: /\.js$/,
+          test: /\.ts$/,
           exclude: /node_modules/,
-          use: { loader: 'babel-loader' },
+          use: 'ts-loader',
         },
         {
           test: /\.vue$/,
@@ -37,7 +37,7 @@ module.exports = (env, argv) => {
     },
     resolve: {
       modules: [path.join(__dirname, 'src'), 'node_modules'],
-      extensions: ['.js', '.vue'],
+      extensions: ['.ts', '.js', '.vue'],
       alias: {
         'vue$': 'vue/dist/vue.esm.js'
       },

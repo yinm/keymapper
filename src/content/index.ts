@@ -9,7 +9,7 @@ const getSettings = () => {
   })
 }
 
-getSettings().then((settings) => {
+getSettings().then((settings: Settings) => {
   window.addEventListener('keydown', (event) => {
     const keyString = detectKeyString(event)
     const actionDefinition = settings.actionDefinitions[keyString]
