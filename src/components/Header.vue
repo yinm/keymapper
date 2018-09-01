@@ -10,15 +10,16 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .container {
   background-color: #fff;
-}
-h1 {
-  margin: 0 auto;
-  max-width: 1200px;
-  padding: 60px 30px;
-  font-weight: normal;
-  letter-spacing: 1.2px;
+
+  h1 {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 60px 30px;
+    font-weight: normal;
+    letter-spacing: 1.2px;
+  }
 }
 </style>

@@ -34,7 +34,7 @@
   }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
   tr {
     border-top: 1px solid #ddd;
   }
