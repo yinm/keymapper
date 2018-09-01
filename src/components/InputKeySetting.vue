@@ -68,7 +68,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
   form {
     margin-top: 30px;
     padding: 20px 0;

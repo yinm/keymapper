@@ -64,7 +64,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
   main {
     max-width: 1200px;
     margin: 0 auto;
