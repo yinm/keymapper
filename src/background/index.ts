@@ -16,6 +16,9 @@ chrome.runtime.onInstalled.addListener(() => {
       'Shift+H': {
         type: 'GoBackAction',
       },
+      'Shift+L': {
+        type: 'GoForwardAction',
+      },
       'Ctrl+J': {
         type: 'ScrollDownAction',
       },
