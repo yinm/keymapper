@@ -1,9 +1,7 @@
 import Action from './Action'
 
 export default class ScrollToBottomAction extends Action {
-  static hasValue() {
-    return false
-  }
+  static hasValue: boolean = false
 
   run() {
     scrollToBottom()
