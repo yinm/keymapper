@@ -1,9 +1,7 @@
 import Action from './Action'
 
 export default class CopyToClipboardAction extends Action {
-  static hasValue() {
-    return true
-  }
+  static hasValue: boolean = true
 
   run() {
     copyToClipboard(

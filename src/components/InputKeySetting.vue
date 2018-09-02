@@ -17,7 +17,7 @@
         </select>
       </label>
     </div>
-    <div v-if="actions[actionType] && actions[actionType].hasValue()">
+    <div v-if="actions[actionType] && actions[actionType].hasValue">
       <label>
         <p class="label">Value</p>
         <input type="text" @change="onChange" :value="value" required class="input" /><br>
