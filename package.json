@@ -7,7 +7,8 @@
     "dev": "npm run build:clean && npm run build:copy && webpack --mode development",
     "build": "npm run build:clean && npm run build:copy && webpack --mode production",
     "build:clean": "rm -rf ./dist || true && mkdir -p ./dist",
-    "build:copy": "cp -r ./src/icons ./src/manifest.json ./src/options/pages ./dist"
+    "build:copy": "cp -r ./src/icons ./src/manifest.json ./src/options/pages ./dist",
+    "lint": "eslint --fix 'src/**/*.{ts,vue}'"
   },
   "repository": {
     "type": "git",
