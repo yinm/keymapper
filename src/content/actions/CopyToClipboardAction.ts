@@ -5,13 +5,10 @@ export default class CopyToClipboardAction extends Action {
 
   run() {
     copyToClipboard(
-      format(
-        this.value,
-        {
-          title: document.title,
-          url: location.href,
-        }
-      )
+      format(this.value, {
+        title: document.title,
+        url: location.href
+      })
     )
   }
 }

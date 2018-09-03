@@ -5,7 +5,7 @@ import ScrollDownAction from './ScrollDownAction'
 import ScrollUpAction from './ScrollUpAction'
 import ScrollToTop from './ScrollToTopAction'
 import ScrollToBottom from './ScrollToBottomAction'
-import GoForwardAction from "./GoForwardAction"
+import GoForwardAction from './GoForwardAction'
 
 const actions = {
   CopyToClipboard: CopyToClipboardAction,
@@ -14,7 +14,7 @@ const actions = {
   ScrollUpAction: ScrollUpAction,
   ScrollDownAction: ScrollDownAction,
   ScrollToTop: ScrollToTop,
-  ScrollToBottom: ScrollToBottom,
+  ScrollToBottom: ScrollToBottom
 }
 
 export default actions

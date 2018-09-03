@@ -16,30 +16,29 @@
 </template>
 
 <script>
-  export default {
-    name: 'KeySetting',
-    props: {
-      keyString: String,
-      actionDefinitions: Object,
-    },
-    data() {
-      return {
-      }
-    },
-    methods: {
-      onDelete() {
-        this.$emit('on-delete', this.keyString)
-      }
-    },
+export default {
+  name: 'KeySetting',
+  props: {
+    keyString: String,
+    actionDefinitions: Object
+  },
+  data() {
+    return {}
+  },
+  methods: {
+    onDelete() {
+      this.$emit('on-delete', this.keyString)
+    }
   }
+}
 </script>
 
 <style lang="scss" scoped>
-  tr {
-    border-top: 1px solid #ddd;
-  }
-  td {
-    padding: 20px 70px;
-    font-size: 1rem;
-  }
+tr {
+  border-top: 1px solid #ddd;
+}
+td {
+  padding: 20px 70px;
+  font-size: 1rem;
+}
 </style>

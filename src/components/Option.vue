@@ -4,13 +4,13 @@
     <main>
       <table>
         <tbody>
-        <key-setting
-          v-for="keyString in Object.keys(settings.actionDefinitions)"
-          :key="keyString"
-          :key-string="keyString"
-          :action-definitions="settings.actionDefinitions[keyString]"
-          @on-delete="onDelete"
-        />
+          <key-setting
+            v-for="keyString in Object.keys(settings.actionDefinitions)"
+            :key="keyString"
+            :key-string="keyString"
+            :action-definitions="settings.actionDefinitions[keyString]"
+            @on-delete="onDelete"
+          />
         </tbody>
       </table>
       <input-key-setting @on-submit="onSubmit" />
@@ -28,13 +28,13 @@ export default {
   components: {
     Header,
     InputKeySetting,
-    KeySetting,
+    KeySetting
   },
   data() {
     return {
       settings: {
-        actionDefinitions: {},
-      },
+        actionDefinitions: {}
+      }
     }
   },
   mounted() {
@@ -49,31 +49,27 @@ export default {
     },
 
     onSubmit(keyString, type, value) {
-      this.$set(
-        this.settings.actionDefinitions,
-        keyString,
-        {
-          type: type,
-          value: value,
-        }
-      )
+      this.$set(this.settings.actionDefinitions, keyString, {
+        type: type,
+        value: value
+      })
 
       chrome.storage.sync.set({ settings: this.settings })
-    },
-  },
+    }
+  }
 }
 </script>
 
 <style lang="scss" scoped>
-  main {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  table {
-    display: flex;
-    background-color: #fff;
-    justify-content: space-evenly;
-    margin-top: 30px;
-    border-collapse: collapse;
-  }
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+table {
+  display: flex;
+  background-color: #fff;
+  justify-content: space-evenly;
+  margin-top: 30px;
+  border-collapse: collapse;
+}
 </style>

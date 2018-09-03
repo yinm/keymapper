@@ -3,14 +3,26 @@
     <div>
       <label>
         <p class="label">Key</p>
-        <input type="text" @keydown="onKeyDown" :value="keyString" required class="input" />
+        <input 
+          :value="keyString" 
+          type="text" 
+          required 
+          class="input" 
+          @keydown="onKeyDown" >
       </label>
     </div>
     <div>
       <label>
         <p class="label">Action</p>
-        <select type="select" @change="onChangeActionType" :value="actionType" required class="input">
-          <option disabled value="">Please select one</option>
+        <select 
+          :value="actionType" 
+          type="select" 
+          required 
+          class="input" 
+          @change="onChangeActionType">
+          <option 
+            disabled 
+            value="">Please select one</option>
           <option v-for="(action, key) in actions">
             {{ key }}
           </option>
@@ -20,12 +32,20 @@
     <div v-if="actions[actionType] && actions[actionType].hasValue">
       <label>
         <p class="label">Value</p>
-        <input type="text" @change="onChange" :value="value" required class="input" /><br>
+        <input 
+          :value="value" 
+          type="text" 
+          required 
+          class="input" 
+          @change="onChange" ><br>
         <p class="annotation">${title} and ${url} variables are available.</p>
       </label>
     </div>
     <div>
-      <input type="submit" value="Add" class="submit" />
+      <input 
+        type="submit" 
+        value="Add" 
+        class="submit" >
     </div>
   </form>
 </template>
@@ -41,7 +61,7 @@ export default {
       keyString: '',
       actionType: '',
       value: '',
-      actions,
+      actions
     }
   },
   methods: {
@@ -63,39 +83,39 @@ export default {
 
     onChange(e) {
       this.value = e.target.value
-    },
+    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-  form {
-    margin-top: 30px;
-    padding: 20px 0;
-    background-color: #fff;
-  }
-  div {
-    width: 798px;
-    margin: 0 auto;
-  }
-  .input {
-    height: 20px;
-    width: 100%;
-    font-size: 1rem;
-  }
-  .submit {
-    margin-top: 20px;
-    padding: 5px 20px;
-    border: 2px solid #6D9EE1;
-    border-radius: 5px;
-    background-color: #6D9EE1;
-    color: #fff;
-  }
-  .label {
-    font-size: 1rem;
-    margin: 25px 0 10px;
-  }
-  .annotation {
-    color: #888;
-  }
+form {
+  margin-top: 30px;
+  padding: 20px 0;
+  background-color: #fff;
+}
+div {
+  width: 798px;
+  margin: 0 auto;
+}
+.input {
+  height: 20px;
+  width: 100%;
+  font-size: 1rem;
+}
+.submit {
+  margin-top: 20px;
+  padding: 5px 20px;
+  border: 2px solid #6d9ee1;
+  border-radius: 5px;
+  background-color: #6d9ee1;
+  color: #fff;
+}
+.label {
+  font-size: 1rem;
+  margin: 25px 0 10px;
+}
+.annotation {
+  color: #888;
+}
 </style>
