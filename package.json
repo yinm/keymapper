@@ -7,7 +7,8 @@
     "dev": "npm run build:clean && npm run build:copy && webpack --mode development",
     "build": "npm run build:clean && npm run build:copy && webpack --mode production",
     "build:clean": "rm -rf ./dist || true && mkdir -p ./dist",
-    "build:copy": "cp -r ./src/icons ./src/manifest.json ./src/options/pages ./dist"
+    "build:copy": "cp -r ./src/icons ./src/manifest.json ./src/options/pages ./dist",
+    "lint": "eslint --fix 'src/**/*.{ts,vue}'"
   },
   "repository": {
     "type": "git",
@@ -32,13 +33,16 @@
     "css-loader": "1.0.0",
     "eslint": "5.5.0",
     "eslint-config-prettier": "3.0.1",
+    "eslint-config-typescript": "^1.1.0",
     "eslint-plugin-prettier": "2.6.2",
+    "eslint-plugin-typescript": "^0.12.0",
     "eslint-plugin-vue": "4.7.1",
     "node-sass": "^4.9.3",
     "prettier": "1.14.2",
     "sass-loader": "^7.1.0",
     "ts-loader": "^4.5.0",
     "typescript": "^3.0.3",
+    "typescript-eslint-parser": "^18.0.0",
     "vue-class-component": "^6.2.0",
     "vue-loader": "15.4.1",
     "vue-style-loader": "4.1.2",

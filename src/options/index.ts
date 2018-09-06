@@ -6,5 +6,5 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   components: { Option },
-  template: '<Option/>',
+  template: '<Option/>'
 })

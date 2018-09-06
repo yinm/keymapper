@@ -7,31 +7,31 @@ chrome.runtime.onInstalled.addListener(() => {
     actionDefinitions: {
       'Ctrl+L': {
         value: '${title}\n${url}',
-        type: 'CopyToClipboard',
+        type: 'CopyToClipboard'
       },
       'Ctrl+M': {
         value: '[${title}](${url})',
-        type: 'CopyToClipboard',
+        type: 'CopyToClipboard'
       },
       'Shift+H': {
-        type: 'GoBackAction',
+        type: 'GoBackAction'
       },
       'Shift+L': {
-        type: 'GoForwardAction',
+        type: 'GoForwardAction'
       },
       'Ctrl+J': {
-        type: 'ScrollDownAction',
+        type: 'ScrollDownAction'
       },
       'Ctrl+K': {
-        type: 'ScrollUpAction',
+        type: 'ScrollUpAction'
       },
       'Ctrl+G': {
-        type: 'ScrollToTop',
+        type: 'ScrollToTop'
       },
       'Shift+G': {
-        type: 'ScrollToBottom',
-      },
-    },
+        type: 'ScrollToBottom'
+      }
+    }
   }
 
   chrome.storage.sync.get('settings', ({ settings }) => {

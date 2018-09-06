@@ -1,48 +1,26 @@
 {
-  "env": {
-    "browser": true,
-    "commonjs": true,
-    "es6": true
+  "parser": "vue-eslint-parser",
+  "parserOptions": {
+    "parser": "typescript-eslint-parser"
   },
   "extends": [
     "eslint:recommended",
     "plugin:vue/recommended",
-    "plugin:prettier/recommended"
+    "typescript",
+    "prettier"
   ],
   "plugins": [
-    "vue"
+    "prettier"
   ],
-  "parserOptions": {
-    "ecmaVersion": 2015,
-    "sourceType": "module"
-  },
   "globals": {
     "chrome": false
   },
   "rules": {
-    "indent": [
-      "error",
-      2
-    ],
-    "linebreak-style": [
-      "error",
-      "unix"
-    ],
-    "quotes": [
-      "error",
-      "single"
-    ],
-    "semi": [
-      "error",
-      "never"
-    ],
     "prettier/prettier": [
       "error",
       {
         "semi": false,
-        "singleQuote": true,
-        "trailingComma": "all",
-        "arrowParens": "always"
+        "singleQuote": true
       }
     ]
   }
