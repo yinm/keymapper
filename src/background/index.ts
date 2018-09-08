@@ -1,8 +1,14 @@
+import MessageSender = chrome.runtime.MessageSender
+
 interface Settings {
   actionDefinitions: {}
 }
 
-chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+interface MessageObject {
+  function: string;
+}
+
+chrome.runtime.onMessage.addListener((message: MessageObject, sender: MessageSender, sendResponse: (response: any) => void): void => {
   if (message.function === 'togglePin') {
     chrome.tabs.get(sender.tab.id, (tab) => {
       chrome.tabs.update(sender.tab.id, { pinned: !tab.pinned })
