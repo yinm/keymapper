@@ -9,13 +9,13 @@ import ToggleTabPinAction from './ToggleTabPinAction'
 
 const actions = {
   CopyToClipboard: CopyToClipboardAction,
-  GoBackAction: GoBackAction,
-  GoForwardAction: GoForwardAction,
-  ScrollUpAction: ScrollUpAction,
-  ScrollDownAction: ScrollDownAction,
+  GoBack: GoBackAction,
+  GoForward: GoForwardAction,
+  ScrollUp: ScrollUpAction,
+  ScrollDown: ScrollDownAction,
   ScrollToTop: ScrollToTop,
   ScrollToBottom: ScrollToBottom,
-  ToggleTabPinAction: ToggleTabPinAction
+  ToggleTabPin: ToggleTabPinAction
 }
 
 export default actions
