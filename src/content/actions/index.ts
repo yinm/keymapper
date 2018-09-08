@@ -5,6 +5,7 @@ import ScrollDownAction from './ScrollDownAction'
 import ScrollUpAction from './ScrollUpAction'
 import ScrollToTop from './ScrollToTopAction'
 import ScrollToBottom from './ScrollToBottomAction'
+import ToggleTabPinAction from './ToggleTabPinAction'
 import GoForwardAction from './GoForwardAction'
 
 const actions = {
@@ -14,7 +15,8 @@ const actions = {
   ScrollUpAction: ScrollUpAction,
   ScrollDownAction: ScrollDownAction,
   ScrollToTop: ScrollToTop,
-  ScrollToBottom: ScrollToBottom
+  ScrollToBottom: ScrollToBottom,
+  ToggleTabPinAction: ToggleTabPinAction
 }
 
 export default actions

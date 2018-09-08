@@ -2,6 +2,14 @@ interface Settings {
   actionDefinitions: {}
 }
 
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+  if (message.function === 'togglePin') {
+    chrome.tabs.get(sender.tab.id, (tab) => {
+      chrome.tabs.update(sender.tab.id, { pinned: !tab.pinned })
+    })
+  }
+})
+
 chrome.runtime.onInstalled.addListener(() => {
   const defaultSettings: Settings = {
     actionDefinitions: {
@@ -30,6 +38,9 @@ chrome.runtime.onInstalled.addListener(() => {
       },
       'Shift+G': {
         type: 'ScrollToBottom'
+      },
+      'Shift+P': {
+        type: 'ToggleTabPinAction'
       }
     }
   }
