@@ -16,6 +16,12 @@
     "chrome": false
   },
   "rules": {
+    "typescript/member-delimiter-style": [
+      "error",
+      {
+        "delimiter": "none"
+      }
+    ],
     "prettier/prettier": [
       "error",
       {

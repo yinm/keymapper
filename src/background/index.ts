@@ -1,6 +1,26 @@
+import MessageSender = chrome.runtime.MessageSender
+
 interface Settings {
   actionDefinitions: {}
 }
+
+interface MessageObject {
+  function: string
+}
+
+chrome.runtime.onMessage.addListener(
+  (
+    message: MessageObject,
+    sender: MessageSender,
+    sendResponse: (response: any) => void
+  ): void => {
+    if (message.function === 'togglePin') {
+      chrome.tabs.get(sender.tab.id, tab => {
+        chrome.tabs.update(sender.tab.id, { pinned: !tab.pinned })
+      })
+    }
+  }
+)
 
 chrome.runtime.onInstalled.addListener(() => {
   const defaultSettings: Settings = {
@@ -30,6 +50,9 @@ chrome.runtime.onInstalled.addListener(() => {
       },
       'Shift+G': {
         type: 'ScrollToBottom'
+      },
+      'Shift+P': {
+        type: 'ToggleTabPinAction'
       }
     }
   }
