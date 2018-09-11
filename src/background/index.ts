@@ -34,16 +34,16 @@ chrome.runtime.onInstalled.addListener(() => {
         type: 'CopyToClipboard'
       },
       'Shift+H': {
-        type: 'GoBackAction'
+        type: 'GoBack'
       },
       'Shift+L': {
-        type: 'GoForwardAction'
+        type: 'GoForward'
       },
       'Ctrl+J': {
-        type: 'ScrollDownAction'
+        type: 'ScrollDown'
       },
       'Ctrl+K': {
-        type: 'ScrollUpAction'
+        type: 'ScrollUp'
       },
       'Ctrl+G': {
         type: 'ScrollToTop'
@@ -52,7 +52,7 @@ chrome.runtime.onInstalled.addListener(() => {
         type: 'ScrollToBottom'
       },
       'Shift+P': {
-        type: 'ToggleTabPinAction'
+        type: 'ToggleTabPin'
       }
     }
   }
