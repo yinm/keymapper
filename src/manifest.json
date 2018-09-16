@@ -1,7 +1,7 @@
 {
   "name": "keymapper",
   "description": "Set hotkeys",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "author": "yinm",
   "manifest_version": 2,
   "icons": {
