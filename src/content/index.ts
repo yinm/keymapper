@@ -23,7 +23,7 @@ getSettings().then((settings: Settings) => {
   })
 })
 
-function isEditable(element) {
+function isEditable(element: Element): boolean {
   const tagName = element.tagName.toLowerCase()
   const editableType = [
     'date',
@@ -42,8 +42,8 @@ function isEditable(element) {
   ]
 
   return (
-    element.isContentEditable ||
+    (<HTMLElement>element).isContentEditable ||
     tagName === 'textarea' ||
-    (tagName === 'input' && editableType.includes(element.type))
+    (tagName === 'input' && editableType.includes((<HTMLInputElement>element).type))
   )
 }
