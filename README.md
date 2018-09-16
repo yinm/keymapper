@@ -1,9 +1,10 @@
-# Keymapper
+# keymapper
 Chrome extension for hotkeys.
 
 Inspired by [r7kamura/keyworks: A web browser extension to customize keyboard shortcuts.](https://github.com/r7kamura/keyworks)
 
-<img width="1258" alt="ss" src="https://user-images.githubusercontent.com/13295106/43583477-92eeab08-969a-11e8-9b7a-ce2c66b190f4.png">
+<img width="1258" alt="ss" src="https://user-images.githubusercontent.com/13295106/45596481-5a6db500-b9f7-11e8-82fc-beb104347e89.png">
+
 
 ## Install
 

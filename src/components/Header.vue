@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1>Keymapper Settings</h1>
+    <h1>keymapper Settings</h1>
   </div>
 </template>
 
