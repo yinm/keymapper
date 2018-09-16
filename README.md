@@ -1,4 +1,4 @@
-# Keymapper
+# keymapper
 Chrome extension for hotkeys.
 
 Inspired by [r7kamura/keyworks: A web browser extension to customize keyboard shortcuts.](https://github.com/r7kamura/keyworks)
