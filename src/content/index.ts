@@ -11,6 +11,10 @@ const getSettings = () => {
 
 getSettings().then((settings: Settings) => {
   window.addEventListener('keydown', event => {
+    if (isEditable(document.activeElement)) {
+      return
+    }
+
     const keyString = detectKeyString(event)
     const actionDefinition = settings.actionDefinitions[keyString]
     if (actionDefinition) {
@@ -18,3 +22,28 @@ getSettings().then((settings: Settings) => {
     }
   })
 })
+
+function isEditable(element: Element): boolean {
+  const tagName = element.tagName.toLowerCase()
+  const editableType = [
+    'date',
+    'datetime',
+    'datetime-local',
+    'email',
+    'month',
+    'number',
+    'password',
+    'search',
+    'tel',
+    'text',
+    'time',
+    'url',
+    'week'
+  ]
+
+  return (
+    (<HTMLElement>element).isContentEditable ||
+    tagName === 'textarea' ||
+    (tagName === 'input' && editableType.includes((<HTMLInputElement>element).type))
+  )
+}
