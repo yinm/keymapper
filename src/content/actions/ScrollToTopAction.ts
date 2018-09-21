@@ -1,6 +1,6 @@
 import Action from './Action'
 
-function scrollToTop() {
+function scrollToTop(): void {
   const currentY = window.pageYOffset
   window.scrollTo(0, Math.floor(currentY / 2))
   if (currentY > 0) {
