@@ -1,7 +1,7 @@
 import { detectKeyString } from 'key-string'
 import actions from './actions/index'
 
-const getSettings = () => {
+const getSettings = (): Promise<T> => {
   return new Promise(resolve => {
     chrome.storage.sync.get('settings', ({ settings }) => {
       resolve(settings)
