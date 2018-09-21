@@ -9,20 +9,6 @@ const getSettings = () => {
   })
 }
 
-getSettings().then((settings: Settings) => {
-  window.addEventListener('keydown', event => {
-    if (isEditable(document.activeElement)) {
-      return
-    }
-
-    const keyString = detectKeyString(event)
-    const actionDefinition = settings.actionDefinitions[keyString]
-    if (actionDefinition) {
-      new actions[actionDefinition.type](actionDefinition).run()
-    }
-  })
-})
-
 function isEditable(element: Element): boolean {
   const tagName = element.tagName.toLowerCase()
   const editableType = [
@@ -48,3 +34,17 @@ function isEditable(element: Element): boolean {
       editableType.includes((element as HTMLInputElement).type))
   )
 }
+
+getSettings().then((settings: Settings) => {
+  window.addEventListener('keydown', event => {
+    if (isEditable(document.activeElement)) {
+      return
+    }
+
+    const keyString = detectKeyString(event)
+    const actionDefinition = settings.actionDefinitions[keyString]
+    if (actionDefinition) {
+      new actions[actionDefinition.type](actionDefinition).run()
+    }
+  })
+})
