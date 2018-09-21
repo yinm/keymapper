@@ -42,8 +42,9 @@ function isEditable(element: Element): boolean {
   ]
 
   return (
-    (<HTMLElement>element).isContentEditable ||
+    (element as HTMLElement).isContentEditable ||
     tagName === 'textarea' ||
-    (tagName === 'input' && editableType.includes((<HTMLInputElement>element).type))
+    (tagName === 'input' &&
+      editableType.includes((element as HTMLInputElement).type))
   )
 }
