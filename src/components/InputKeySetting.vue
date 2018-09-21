@@ -3,27 +3,29 @@
     <div>
       <label>
         <p class="label">Key</p>
-        <input 
-          :value="keyString" 
-          type="text" 
-          required 
-          class="input" 
+        <input
+          :value="keyString"
+          type="text"
+          required
+          class="input"
           @keydown="onKeyDown" >
       </label>
     </div>
     <div>
       <label>
         <p class="label">Action</p>
-        <select 
-          :value="actionType" 
-          type="select" 
-          required 
-          class="input" 
+        <select
+          :value="actionType"
+          type="select"
+          required
+          class="input"
           @change="onChangeActionType">
-          <option 
-            disabled 
+          <option
+            disabled
             value="">Please select one</option>
-          <option v-for="(action, key) in actions">
+          <option 
+            v-for="(action, key) in actions" 
+            :key="key">
             {{ key }}
           </option>
         </select>
@@ -32,19 +34,19 @@
     <div v-if="actions[actionType] && actions[actionType].hasValue">
       <label>
         <p class="label">Value</p>
-        <input 
-          :value="value" 
-          type="text" 
-          required 
-          class="input" 
+        <input
+          :value="value"
+          type="text"
+          required
+          class="input"
           @change="onChange" ><br>
         <p class="annotation">${title} and ${url} variables are available.</p>
       </label>
     </div>
     <div>
-      <input 
-        type="submit" 
-        value="Add" 
+      <input
+        type="submit"
+        value="Add"
         class="submit" >
     </div>
   </form>
