@@ -1,9 +1,9 @@
 import Action from './Action'
 
 export default class GoForwardAction extends Action {
-  static hasValue: boolean = false
+  public static hasValue: boolean = false
 
-  run(): void {
+  public run(): void {
     history.forward()
   }
 }

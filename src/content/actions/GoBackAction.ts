@@ -1,9 +1,9 @@
 import Action from './Action'
 
 export default class GoBackAction extends Action {
-  static hasValue: boolean = false
+  public static hasValue: boolean = false
 
-  run(): void {
+  public run(): void {
     history.back()
   }
 }

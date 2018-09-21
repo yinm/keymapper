@@ -1,9 +1,9 @@
 import Action from './Action'
 
 export default class ScrollToTopAction extends Action {
-  static hasValue: boolean = false
+  public static hasValue: boolean = false
 
-  run() {
+  public run() {
     scrollToTop()
   }
 }
