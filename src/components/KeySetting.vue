@@ -19,8 +19,19 @@
 export default {
   name: 'KeySetting',
   props: {
-    keyString: String,
-    actionDefinitions: Object
+    keyString: {
+      type: String,
+      default: ''
+    },
+    actionDefinitions: {
+      type: Object,
+      default: function() {
+        return {
+          type: '',
+          value: ''
+        }
+      }
+    }
   },
   data() {
     return {}
