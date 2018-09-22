@@ -1,9 +1,9 @@
 import Action from './Action'
 
 export default class ScrollDownAction extends Action {
-  static hasValue: boolean = false
+  public static hasValue: boolean = false
 
-  run() {
+  public run() {
     window.scrollBy(0, 100)
   }
 }

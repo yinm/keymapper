@@ -1,27 +1,13 @@
 import { detectKeyString } from 'key-string'
 import actions from './actions/index'
 
-const getSettings = () => {
+const getSettings = (): Promise<any> => {
   return new Promise(resolve => {
     chrome.storage.sync.get('settings', ({ settings }) => {
       resolve(settings)
     })
   })
 }
-
-getSettings().then((settings: Settings) => {
-  window.addEventListener('keydown', event => {
-    if (isEditable(document.activeElement)) {
-      return
-    }
-
-    const keyString = detectKeyString(event)
-    const actionDefinition = settings.actionDefinitions[keyString]
-    if (actionDefinition) {
-      new actions[actionDefinition.type](actionDefinition).run()
-    }
-  })
-})
 
 function isEditable(element: Element): boolean {
   const tagName = element.tagName.toLowerCase()
@@ -42,8 +28,23 @@ function isEditable(element: Element): boolean {
   ]
 
   return (
-    (<HTMLElement>element).isContentEditable ||
+    (element as HTMLElement).isContentEditable ||
     tagName === 'textarea' ||
-    (tagName === 'input' && editableType.includes((<HTMLInputElement>element).type))
+    (tagName === 'input' &&
+      editableType.includes((element as HTMLInputElement).type))
   )
 }
+
+getSettings().then((settings: Settings) => {
+  window.addEventListener('keydown', event => {
+    if (isEditable(document.activeElement)) {
+      return
+    }
+
+    const keyString = detectKeyString(event)
+    const actionDefinition = settings.actionDefinitions[keyString]
+    if (actionDefinition) {
+      new actions[actionDefinition.type](actionDefinition).run()
+    }
+  })
+})
