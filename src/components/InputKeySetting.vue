@@ -93,6 +93,7 @@ export default {
 <style lang="scss" scoped>
 form {
   margin-top: 30px;
+  margin-bottom: 30px;
   padding: 20px 0;
   background-color: #fff;
   box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3),
