@@ -23,8 +23,8 @@
           <option
             disabled
             value="">Please select one</option>
-          <option 
-            v-for="(action, key) in actions" 
+          <option
+            v-for="(action, key) in actions"
             :key="key">
             {{ key }}
           </option>
