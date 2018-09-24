@@ -3,7 +3,7 @@ Chrome extension for hotkeys.
 
 Inspired by [r7kamura/keyworks: A web browser extension to customize keyboard shortcuts.](https://github.com/r7kamura/keyworks)
 
-<img width="1258" alt="ss" src="https://user-images.githubusercontent.com/13295106/45596481-5a6db500-b9f7-11e8-82fc-beb104347e89.png">
+<img width="640" alt="screen shot 2018-09-24 at 15 40 00" src="https://user-images.githubusercontent.com/13295106/45939836-5ef62700-c010-11e8-9473-577e25a4e20c.png">
 
 
 ## Install

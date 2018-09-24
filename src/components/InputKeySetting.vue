@@ -7,7 +7,7 @@
           :value="keyString"
           type="text"
           required
-          class="input"
+          class="input input-text"
           @keydown="onKeyDown" >
       </label>
     </div>
@@ -23,8 +23,8 @@
           <option
             disabled
             value="">Please select one</option>
-          <option 
-            v-for="(action, key) in actions" 
+          <option
+            v-for="(action, key) in actions"
             :key="key">
             {{ key }}
           </option>
@@ -38,7 +38,7 @@
           :value="value"
           type="text"
           required
-          class="input"
+          class="input input-text"
           @change="onChange" ><br>
         <p class="annotation">${title} and ${url} variables are available.</p>
       </label>
@@ -93,6 +93,7 @@ export default {
 <style lang="scss" scoped>
 form {
   margin-top: 30px;
+  margin-bottom: 30px;
   padding: 20px 0;
   background-color: #fff;
   box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3),
@@ -108,13 +109,22 @@ div {
   width: 100%;
   font-size: 1rem;
 }
+.input-text {
+  border: none;
+  border-bottom: 1px solid #ccc;
+  outline: none;
+}
+.input-text:focus {
+  border-color: #1565c0;
+}
 .submit {
   margin-top: 20px;
-  padding: 5px 20px;
-  border: 2px solid #6d9ee1;
+  padding: 5px 10px;
+  border: 2px solid #1565c0;
   border-radius: 5px;
-  background-color: #6d9ee1;
+  background-color: #1565c0;
   color: #fff;
+  font-size: 0.9rem;
 }
 .label {
   font-size: 1rem;

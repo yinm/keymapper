@@ -4,7 +4,7 @@
   "description": "chrome extension",
   "main": "index.js",
   "scripts": {
-    "dev": "npm run build:clean && npm run build:copy && webpack --mode development",
+    "dev": "npm run build:clean && npm run build:copy && webpack --mode development --watch",
     "build": "npm run build:clean && npm run build:copy && webpack --mode production",
     "build:clean": "rm -rf ./dist || true && mkdir -p ./dist",
     "build:copy": "cp -r ./src/icons ./src/manifest.json ./src/options/pages ./dist",

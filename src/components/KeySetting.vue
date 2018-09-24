@@ -10,7 +10,12 @@
       {{ actionDefinitions.value }}
     </td>
     <td>
-      <button @click="onDelete">x</button>
+      <span
+        class="delete-button"
+        @click="onDelete"
+      >
+        x
+      </span>
     </td>
   </tr>
 </template>
@@ -54,5 +59,10 @@ tr:first-child {
 td {
   padding: 20px 70px;
   font-size: 1rem;
+}
+.delete-button {
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 300;
 }
 </style>
