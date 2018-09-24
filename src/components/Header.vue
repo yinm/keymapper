@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1>keymapper Settings</h1>
+    <h1>keymapper</h1>
   </div>
 </template>
 
@@ -12,12 +12,14 @@ export default {
 
 <style lang="scss" scoped>
 .container {
-  background-color: #fff;
+  background-color: #1565c0;
 
   h1 {
+    color: #fff;
     margin: 0 auto;
     max-width: 1200px;
-    padding: 60px 30px;
+    padding: 0 30px;
+    line-height: 2.2;
     font-weight: normal;
     letter-spacing: 1.2px;
   }

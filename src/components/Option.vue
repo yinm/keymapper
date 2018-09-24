@@ -71,5 +71,8 @@ table {
   justify-content: space-evenly;
   margin-top: 30px;
   border-collapse: collapse;
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3),
+    0 1px 3px 1px rgba(60, 64, 67, 0.15);
+  border-radius: 5px;
 }
 </style>
