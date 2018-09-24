@@ -7,7 +7,7 @@
           :value="keyString"
           type="text"
           required
-          class="input"
+          class="input input-text"
           @keydown="onKeyDown" >
       </label>
     </div>
@@ -38,7 +38,7 @@
           :value="value"
           type="text"
           required
-          class="input"
+          class="input input-text"
           @change="onChange" ><br>
         <p class="annotation">${title} and ${url} variables are available.</p>
       </label>
@@ -108,6 +108,14 @@ div {
   height: 20px;
   width: 100%;
   font-size: 1rem;
+}
+.input-text {
+  border: none;
+  border-bottom: 1px solid #ccc;
+  outline: none;
+}
+.input-text:focus {
+  border-color: #1565c0;
 }
 .submit {
   margin-top: 20px;
