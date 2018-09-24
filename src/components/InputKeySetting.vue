@@ -95,6 +95,9 @@ form {
   margin-top: 30px;
   padding: 20px 0;
   background-color: #fff;
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3),
+    0 1px 3px 1px rgba(60, 64, 67, 0.15);
+  border-radius: 5px;
 }
 div {
   width: 798px;

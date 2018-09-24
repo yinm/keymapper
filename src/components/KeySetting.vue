@@ -48,6 +48,9 @@ export default {
 tr {
   border-top: 1px solid #ddd;
 }
+tr:first-child {
+  border-top: none;
+}
 td {
   padding: 20px 70px;
   font-size: 1rem;
