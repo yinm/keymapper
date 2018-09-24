@@ -111,9 +111,9 @@ div {
 .submit {
   margin-top: 20px;
   padding: 5px 20px;
-  border: 2px solid #6d9ee1;
+  border: 2px solid #1565c0;
   border-radius: 5px;
-  background-color: #6d9ee1;
+  background-color: #1565c0;
   color: #fff;
 }
 .label {
