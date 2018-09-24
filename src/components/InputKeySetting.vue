@@ -110,11 +110,12 @@ div {
 }
 .submit {
   margin-top: 20px;
-  padding: 5px 20px;
+  padding: 5px 10px;
   border: 2px solid #1565c0;
   border-radius: 5px;
   background-color: #1565c0;
   color: #fff;
+  font-size: 0.9rem;
 }
 .label {
   font-size: 1rem;
