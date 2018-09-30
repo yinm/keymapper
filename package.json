@@ -26,7 +26,7 @@
     "vue": "^2.5.17"
   },
   "devDependencies": {
-    "@types/chrome": "0.0.72",
+    "@types/chrome": "0.0.74",
     "css-loader": "1.0.0",
     "eslint": "5.5.0",
     "eslint-config-prettier": "3.0.1",
