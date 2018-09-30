@@ -41,7 +41,7 @@
     "typescript": "3.0.3",
     "typescript-eslint-parser": "18.0.0",
     "vue-class-component": "6.2.0",
-    "vue-loader": "15.4.1",
+    "vue-loader": "15.4.2",
     "vue-style-loader": "4.1.2",
     "vue-template-compiler": "2.5.17",
     "webpack": "4.20.2",
