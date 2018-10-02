@@ -24,7 +24,8 @@
   "homepage": "https://github.com/yinm/keymapper#readme",
   "dependencies": {
     "key-string": "^0.4.0",
-    "vue": "^2.5.17"
+    "vue": "^2.5.17",
+    "vue-property-decorator": "^7.2.0"
   },
   "devDependencies": {
     "@types/chrome": "0.0.74",
