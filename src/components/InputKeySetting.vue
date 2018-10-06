@@ -16,7 +16,6 @@
         <p class="label">Action</p>
         <select
           :value="actionType"
-          type="select"
           required
           class="input"
           @change="onChangeActionType">
