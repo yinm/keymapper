@@ -20,31 +20,19 @@
   </tr>
 </template>
 
-<script>
-export default {
-  name: 'KeySetting',
-  props: {
-    keyString: {
-      type: String,
-      default: ''
-    },
-    actionDefinitions: {
-      type: Object,
-      default: function() {
-        return {
-          type: '',
-          value: ''
-        }
-      }
-    }
-  },
-  data() {
-    return {}
-  },
-  methods: {
-    onDelete() {
-      this.$emit('on-delete', this.keyString)
-    }
+<script lang="ts">
+import { Vue, Component, Prop } from 'vue-property-decorator'
+
+@Component
+export default class KeySetting extends Vue {
+  @Prop()
+  keyString!: string
+  // FIXME: ちゃんとした型にする
+  @Prop()
+  actionDefinitions!: any
+
+  onDelete(): void {
+    this.$emit('on-delete', this.keyString)
   }
 }
 </script>

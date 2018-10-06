@@ -18,44 +18,42 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import { Vue, Component } from 'vue-property-decorator'
 import KeySetting from './KeySetting'
 import InputKeySetting from './InputKeySetting'
 import Header from './Header'
 
-export default {
-  name: 'Option',
+@Component({
   components: {
     Header,
     InputKeySetting,
     KeySetting
-  },
-  data() {
-    return {
-      settings: {
-        actionDefinitions: {}
-      }
-    }
-  },
-  mounted() {
-    chrome.storage.sync.get('settings', ({ settings }) => {
-      this.settings = settings
+  }
+})
+export default class Option extends Vue {
+  settings: Settings = {
+    actionDefinitions: {}
+  }
+
+  mounted(): void {
+    chrome.storage.sync.get('settings', (items: { settings }) => {
+      this.settings = items.settings
     })
-  },
-  methods: {
-    onDelete(keyString) {
-      this.$delete(this.settings.actionDefinitions, keyString)
-      chrome.storage.sync.set({ settings: this.settings })
-    },
+  }
 
-    onSubmit(keyString, type, value) {
-      this.$set(this.settings.actionDefinitions, keyString, {
-        type: type,
-        value: value
-      })
+  onDelete(keyString: any): void {
+    this.$delete(this.settings.actionDefinitions, keyString)
+    chrome.storage.sync.set({ settings: this.settings })
+  }
 
-      chrome.storage.sync.set({ settings: this.settings })
-    }
+  onSubmit(keyString: any, type: string, value: string): void {
+    this.$set(this.settings.actionDefinitions, keyString, {
+      type: type,
+      value: value
+    })
+
+    chrome.storage.sync.set({ settings: this.settings })
   }
 }
 </script>
