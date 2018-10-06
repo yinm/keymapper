@@ -52,40 +52,38 @@
   </form>
 </template>
 
-<script>
+<script lang="ts">
+import { Vue, Component } from 'vue-property-decorator'
 import { detectKeyString } from 'key-string'
 import actions from '../content/actions/index'
 
-export default {
-  name: 'InputKeySetting',
-  data() {
-    return {
-      keyString: '',
-      actionType: '',
-      value: '',
-      actions
+@Component
+export default class InputKeySetting extends Vue {
+  keyString: string = ''
+  actionType: string = ''
+  value: string = ''
+  // FIXME: 型を正しくする
+  // importの時と名前が同じでややこしい
+  actions: any = actions
+
+  onSubmit(e: Event) {
+    e.preventDefault()
+    this.$emit('on-submit', this.keyString, this.actionType, this.value)
+  }
+
+  onKeyDown(e: Event) {
+    const keyString = detectKeyString(e)
+    if (!keyString.includes('Unknown')) {
+      this.keyString = keyString
     }
-  },
-  methods: {
-    onSubmit(e) {
-      e.preventDefault()
-      this.$emit('on-submit', this.keyString, this.actionType, this.value)
-    },
+  }
 
-    onKeyDown(e) {
-      const keyString = detectKeyString(e)
-      if (!keyString.includes('Unknown')) {
-        this.keyString = keyString
-      }
-    },
+  onChangeActionType(e: Event) {
+    this.actionType = (e.target as HTMLInputElement).value
+  }
 
-    onChangeActionType(e) {
-      this.actionType = e.target.value
-    },
-
-    onChange(e) {
-      this.value = e.target.value
-    }
+  onChange(e: Event) {
+    this.value = (e.target as HTMLInputElement).value
   }
 }
 </script>
