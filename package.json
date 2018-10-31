@@ -41,7 +41,7 @@
     "sass-loader": "7.1.0",
     "ts-loader": "5.2.2",
     "typescript": "3.1.5",
-    "typescript-eslint-parser": "20.0.0",
+    "typescript-eslint-parser": "20.1.1",
     "vue-class-component": "6.3.2",
     "vue-loader": "15.4.2",
     "vue-style-loader": "4.1.2",
