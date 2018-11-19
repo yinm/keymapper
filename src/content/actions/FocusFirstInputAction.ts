@@ -4,7 +4,8 @@ export default class FocusFirstInputAction extends Action {
   public static hasValue: boolean = false
 
   public run(): void {
-    this.findFirstInput() && this.findFirstInput().focus()
+    const firstInput = this.findFirstInput()
+    firstInput && firstInput.focus()
   }
 
   private findFirstInput(): HTMLElement|null {
