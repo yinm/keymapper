@@ -1,6 +1,6 @@
 import Action from './Action'
 
-export default class FocusFirstInput extends Action {
+export default class FocusFirstInputAction extends Action {
   public static hasValue: boolean = false
 
   public run(): void {
