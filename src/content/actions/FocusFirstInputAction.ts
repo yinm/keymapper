@@ -8,7 +8,7 @@ export default class FocusFirstInputAction extends Action {
     firstInput && firstInput.focus()
   }
 
-  private findFirstInput(): HTMLElement|null {
+  private findFirstInput(): HTMLInputElement|HTMLTextAreaElement|null {
     const editableTypes = [
       'date',
       'datetime',
