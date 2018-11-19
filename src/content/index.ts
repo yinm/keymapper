@@ -44,6 +44,11 @@ getSettings().then((settings: Settings) => {
     const keyString = detectKeyString(event)
     const actionDefinition = settings.actionDefinitions[keyString]
     if (actionDefinition) {
+      if (actionDefinition.type === 'FocusFirstInput') {
+        // prevent keydown input
+        event.preventDefault()
+      }
+
       new actions[actionDefinition.type](actionDefinition).run()
     }
   })
