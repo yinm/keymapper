@@ -51,6 +51,9 @@ chrome.runtime.onInstalled.addListener(() => {
       'Shift+G': {
         type: 'ScrollToBottom'
       },
+      'Shift+I': {
+        type: 'FocusFirstInput'
+      },
       'Shift+P': {
         type: 'ToggleTabPin'
       }
