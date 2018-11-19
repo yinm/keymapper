@@ -1,4 +1,5 @@
 import CopyToClipboardAction from './CopyToClipboardAction'
+import FocusFirstInput from './FocusFirstInput'
 import GoBackAction from './GoBackAction'
 import GoForwardAction from './GoForwardAction'
 import ScrollDownAction from './ScrollDownAction'
@@ -9,6 +10,7 @@ import ToggleTabPinAction from './ToggleTabPinAction'
 
 const actions = {
   CopyToClipboard: CopyToClipboardAction,
+  FocusFirstInput: FocusFirstInput,
   GoBack: GoBackAction,
   GoForward: GoForwardAction,
   ScrollUp: ScrollUpAction,
