@@ -31,7 +31,7 @@
     "@types/chrome": "0.0.77",
     "css-loader": "1.0.1",
     "eslint": "5.9.0",
-    "eslint-config-prettier": "3.3.0",
+    "eslint-config-prettier": "4.2.0",
     "eslint-config-typescript": "1.1.0",
     "eslint-plugin-prettier": "3.0.1",
     "eslint-plugin-typescript": "0.13.0",
