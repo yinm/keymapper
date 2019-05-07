@@ -30,7 +30,7 @@
   "devDependencies": {
     "@types/chrome": "0.0.83",
     "css-loader": "2.1.1",
-    "eslint": "5.9.0",
+    "eslint": "5.16.0",
     "eslint-config-prettier": "4.2.0",
     "eslint-config-typescript": "2.0.0",
     "eslint-plugin-prettier": "3.0.1",
