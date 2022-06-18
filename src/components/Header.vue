@@ -11,18 +11,18 @@ import { Vue, Component } from 'vue-property-decorator'
 export default class Header extends Vue {}
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .container {
   background-color: #1565c0;
+}
 
-  h1 {
-    color: #fff;
-    margin: 0 auto;
-    max-width: 1200px;
-    padding: 0 30px;
-    line-height: 2.2;
-    font-weight: normal;
-    letter-spacing: 1.2px;
-  }
+.container h1 {
+  color: #fff;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 30px;
+  line-height: 2.2;
+  font-weight: normal;
+  letter-spacing: 1.2px;
 }
 </style>

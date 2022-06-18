@@ -58,7 +58,7 @@ export default class Option extends Vue {
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 main {
   max-width: 1200px;
   margin: 0 auto;

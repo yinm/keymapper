@@ -10,10 +10,8 @@
       {{ actionDefinitions.value }}
     </td>
     <td>
-      <span
-        class="delete-button"
-        @click="onDelete"
-      >
+      <span class="delete-button"
+@click="onDelete">
         x
       </span>
     </td>
@@ -37,7 +35,7 @@ export default class KeySetting extends Vue {
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 tr {
   border-top: 1px solid #ddd;
 }

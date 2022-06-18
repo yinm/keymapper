@@ -8,7 +8,8 @@
           type="text"
           required
           class="input input-text"
-          @keydown="onKeyDown" >
+          @keydown="onKeyDown"
+        />
       </label>
     </div>
     <div>
@@ -18,13 +19,12 @@
           :value="actionType"
           required
           class="input"
-          @change="onChangeActionType">
-          <option
-            disabled
-            value="">Please select one</option>
-          <option
-            v-for="(action, key) in actions"
-            :key="key">
+          @change="onChangeActionType"
+        >
+          <option disabled value=""
+>Please select one</option>
+          <option v-for="(action, key) in actions" :key="key"
+>
             {{ key }}
           </option>
         </select>
@@ -38,15 +38,14 @@
           type="text"
           required
           class="input input-text"
-          @change="onChange" ><br>
+          @change="onChange"
+        /><br />
         <p class="annotation">${title} and ${url} variables are available.</p>
       </label>
     </div>
     <div>
       <input
-        type="submit"
-        value="Add"
-        class="submit" >
+type="submit" value="Add" class="submit" />
     </div>
   </form>
 </template>
@@ -87,7 +86,7 @@ export default class InputKeySetting extends Vue {
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 form {
   margin-top: 30px;
   margin-bottom: 30px;
