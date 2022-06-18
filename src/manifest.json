@@ -1,7 +1,7 @@
 {
   "name": "keymapper",
   "description": "Set hotkeys",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "author": "yinm",
   "manifest_version": 2,
   "icons": {
@@ -10,10 +10,7 @@
     "48": "icons/48.png",
     "128": "icons/128.png"
   },
-  "permissions": [
-    "clipboardRead",
-    "storage"
-  ],
+  "permissions": ["storage"],
   "browser_action": {
     "default_icon": {
       "16": "icons/16.png"
@@ -21,20 +18,14 @@
     "default_title": "keymapper"
   },
   "background": {
-    "scripts": [
-      "js/background.js"
-    ],
+    "scripts": ["js/background.js"],
     "persistent": false
   },
   "content_scripts": [
     {
-      "js": [
-        "js/content.js"
-      ],
+      "js": ["js/content.js"],
       "run_at": "document_start",
-      "matches": [
-        "<all_urls>"
-      ]
+      "matches": ["<all_urls>"]
     }
   ],
   "options_page": "pages/options.html",
