@@ -28,7 +28,7 @@
     "vue-property-decorator": "^8.1.1"
   },
   "devDependencies": {
-    "@types/chrome": "0.0.83",
+    "@types/chrome": "0.0.254",
     "@typescript-eslint/eslint-plugin": "^1.7.0",
     "@typescript-eslint/parser": "^1.7.0",
     "acorn": "^6.1.1",
