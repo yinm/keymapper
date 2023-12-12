@@ -4,8 +4,8 @@
   "description": "chrome extension",
   "main": "index.js",
   "scripts": {
-    "dev": "npm run build:clean && npm run build:copy && webpack --mode development --watch",
-    "build": "npm run build:clean && npm run build:copy && webpack --mode production && ./zip-extension.sh",
+    "dev": "npm run build:clean && npm run build:copy && NODE_OPTIONS=--openssl-legacy-provider webpack --mode development --watch",
+    "build": "npm run build:clean && npm run build:copy && NODE_OPTIONS=--openssl-legacy-provider webpack --mode production && ./zip-extension.sh",
     "build:clean": "rm -rf ./dist || true && mkdir -p ./dist",
     "build:copy": "cp -r ./src/icons ./src/manifest.json ./src/options/pages ./dist",
     "lint": "eslint 'src/**/*.{ts,vue}'",
