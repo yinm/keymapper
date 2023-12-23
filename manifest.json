@@ -2,5 +2,6 @@
   "manifest_version": 3,
   "name": "keymapper",
   "description": "Set hotkeys",
-  "version": "0.9.0"
+  "version": "0.9.0",
+  "options_page": "index.html"
 }
