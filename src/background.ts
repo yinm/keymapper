@@ -11,9 +11,9 @@ type ActionType =
   | "FocusFirstInput"
   | "ToggleTabPin";
 
-interface Hotkey {
+export interface Hotkey {
   type: ActionType;
-  value?: string;
+  value: string;
 }
 
 interface Settings {
@@ -21,6 +21,8 @@ interface Settings {
     [hotKey: string]: Hotkey;
   };
 }
+
+export const storageKey = "settings";
 
 chrome.runtime.onInstalled.addListener(async () => {
   const initialSettings: Settings = {
@@ -35,32 +37,39 @@ chrome.runtime.onInstalled.addListener(async () => {
       },
       "Shift+H": {
         type: "GoBack",
+        value: "",
       },
       "Shift+L": {
         type: "GoForward",
+        value: "",
       },
       "Ctrl+J": {
         type: "ScrollDown",
+        value: "",
       },
       "Ctrl+K": {
         type: "ScrollUp",
+        value: "",
       },
       "Ctrl+G": {
         type: "ScrollToTop",
+        value: "",
       },
       "Shift+G": {
         type: "ScrollToBottom",
+        value: "",
       },
       "Shift+I": {
         type: "FocusFirstInput",
+        value: "",
       },
       "Shift+P": {
         type: "ToggleTabPin",
+        value: "",
       },
     },
   };
 
-  const storageKey = "settings";
   const settings = await chrome.storage.sync.get(storageKey);
   if (isEmptyObject(settings)) {
     chrome.storage.sync.set({ [storageKey]: initialSettings });
