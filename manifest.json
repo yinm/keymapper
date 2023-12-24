@@ -8,5 +8,12 @@
     "service_worker": "src/background.ts",
     "type": "module"
   },
+  "content_scripts": [
+    {
+      "js": ["src/content/index.ts"],
+      "run_at": "document_start",
+      "matches": ["https://*/*", "http://*/*"]
+    }
+  ],
   "permissions": ["storage"]
 }
