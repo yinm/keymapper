@@ -1,24 +1,10 @@
 import { actions } from "./actions";
 import detectKeyString from "./detectKeyString";
 import { storageKey } from "../const";
+import { editableInputType } from "./editableInputType";
 
 const isEditable = (element: Element) => {
   const tagName = element.tagName.toLowerCase();
-  const editableInputType = [
-    "date",
-    "datetime",
-    "datetime-local",
-    "email",
-    "month",
-    "number",
-    "password",
-    "search",
-    "tel",
-    "text",
-    "time",
-    "url",
-    "week",
-  ];
 
   return (
     (element as HTMLElement).isContentEditable ||
@@ -38,6 +24,11 @@ chrome.storage.sync.get(storageKey).then((settings) => {
     const keyString = detectKeyString(event);
     const actionDefinition = settings.settings.actionDefinitions[keyString];
     if (actionDefinition) {
+      if (actionDefinition.type === "FocusFirstInput") {
+        // prevent from inputting hot keys
+        event.preventDefault();
+      }
+
       new actions[actionDefinition.type](actionDefinition).run();
     }
   });
