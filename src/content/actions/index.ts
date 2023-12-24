@@ -4,6 +4,7 @@ import { GoBackAction } from "./GoBackAction";
 import { GoForwardAction } from "./GoForwardAction";
 import { ScrollDownAction } from "./ScrollDownAction";
 import { ScrollToBottomAction } from "./ScrollToBottomAction";
+import { ScrollToTopAction } from "./ScrollToTopAction";
 import { ToggleTabPinAction } from "./ToggleTabPinAction";
 
 // FIXME: more accurate typing (related to ts7053)
@@ -14,5 +15,6 @@ export const actions: { [key: string]: any } = {
   GoForward: GoForwardAction,
   ScrollDown: ScrollDownAction,
   ScrollToBottom: ScrollToBottomAction,
+  ScrollToTop: ScrollToTopAction,
   ToggleTabPin: ToggleTabPinAction,
 };
