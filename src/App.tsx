@@ -1,11 +1,13 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Header } from "./components/Header";
 import { KeySettings } from "./components/KeySettings";
 import { Hotkey } from "./background";
 import { storageKey } from "./const";
 
 function App() {
-  const [actionDefinitions, setActionDefinitions] = useState({});
+  const [actionDefinitions, setActionDefinitions] = useState<{
+    [key: string]: any;
+  }>({});
 
   useEffect(() => {
     chrome.storage.sync.get(storageKey).then((settings) => {
@@ -13,6 +15,18 @@ function App() {
       setActionDefinitions(settings.settings.actionDefinitions);
     });
   }, []);
+
+  const deleteHotKey = useCallback(
+    (keyString: string) => {
+      const {
+        [keyString]: {}, // to delete key
+        ...rest
+      } = actionDefinitions;
+      chrome.storage.sync.set({ [storageKey]: { actionDefinitions: rest } });
+      setActionDefinitions(rest);
+    },
+    [actionDefinitions],
+  );
 
   return (
     <div className="h-screen bg-[#f8f9fa]">
@@ -27,6 +41,7 @@ function App() {
                   keyString={key}
                   actionType={value.type}
                   actionValue={value.value}
+                  onDelete={deleteHotKey}
                 />
               );
             })}
