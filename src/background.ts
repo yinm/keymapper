@@ -1,3 +1,4 @@
+import { storageKey } from "./const";
 import { isEmptyObject } from "./util";
 
 type ActionType =
@@ -21,8 +22,6 @@ interface Settings {
     [hotKey: string]: Hotkey;
   };
 }
-
-export const storageKey = "settings";
 
 chrome.runtime.onInstalled.addListener(async () => {
   const initialSettings: Settings = {

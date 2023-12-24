@@ -1,6 +1,6 @@
-import { storageKey } from "../background";
 import { actions } from "./actions";
 import detectKeyString from "./detectKeyString";
+import { storageKey } from "../const";
 
 const isEditable = (element: Element) => {
   const tagName = element.tagName.toLowerCase();

@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import { Header } from "./components/Header";
 import { KeySettings } from "./components/KeySettings";
-import { Hotkey, storageKey } from "./background";
+import { Hotkey } from "./background";
+import { storageKey } from "./const";
 
 function App() {
   const [actionDefinitions, setActionDefinitions] = useState({});
