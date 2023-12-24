@@ -1,4 +1,4 @@
-import { storageKey } from "./const";
+import { actionKeyForTogglePin, storageKey } from "./const";
 import { isEmptyObject } from "./util";
 
 type ActionType =
@@ -72,5 +72,18 @@ chrome.runtime.onInstalled.addListener(async () => {
   const settings = await chrome.storage.sync.get(storageKey);
   if (isEmptyObject(settings)) {
     chrome.storage.sync.set({ [storageKey]: initialSettings });
+  }
+});
+
+chrome.runtime.onMessage.addListener((message, sender) => {
+  if (message.action === actionKeyForTogglePin) {
+    const tabId = sender.tab?.id;
+    if (typeof tabId === "undefined") {
+      return;
+    }
+
+    chrome.tabs.get(tabId, (tab) => {
+      chrome.tabs.update(tabId, { pinned: !tab.pinned });
+    });
   }
 });
