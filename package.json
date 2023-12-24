@@ -44,7 +44,7 @@
     "vue-class-component": "7.0.2",
     "vue-loader": "15.7.0",
     "vue-style-loader": "4.1.2",
-    "vue-template-compiler": "2.6.10",
+    "vue-template-compiler": "2.7.16",
     "webpack": "4.30.0",
     "webpack-cli": "3.3.2"
   }
