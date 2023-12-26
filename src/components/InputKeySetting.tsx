@@ -35,7 +35,7 @@ export function InputKeySetting({ addHotKey }: Props) {
   };
 
   return (
-    <form className="grid grid-cols-[100px_1fr] grid-rows-3 items-center gap-y-6">
+    <form className="grid grid-cols-[100px_1fr] items-center gap-y-6">
       <label htmlFor="hot-key" className="text-sm text-gray-500">
         Hot Key
       </label>
@@ -63,15 +63,18 @@ export function InputKeySetting({ addHotKey }: Props) {
           <label htmlFor="action-value" className="text-sm text-gray-500">
             Value
           </label>
-          <input
-            id="action-value"
-            className="border-b-2 text-lg text-black"
-            type="text"
-            value={actionValue}
-            onChange={(e) => {
-              setActionValue(e.target.value);
-            }}
-          />
+          <div className="flex flex-col gap-y-2">
+            <input
+              id="action-value"
+              className="border-b-2 text-lg text-black"
+              type="text"
+              value={actionValue}
+              onChange={(e) => {
+                setActionValue(e.target.value);
+              }}
+            />
+            <p>{"${title} and ${url} variables are available."}</p>
+          </div>
         </>
       )}
 
