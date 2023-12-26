@@ -1,9 +1,8 @@
-import Action from './Action'
+import { actionKeyForTogglePin } from "../../const";
+import { Action } from "./Action";
 
-export default class ToggleTabPinAction extends Action {
-  public static hasValue: boolean = false
-
+export class ToggleTabPinAction extends Action {
   public run() {
-    chrome.runtime.sendMessage({ function: 'togglePin' })
+    chrome.runtime.sendMessage({ action: actionKeyForTogglePin });
   }
 }

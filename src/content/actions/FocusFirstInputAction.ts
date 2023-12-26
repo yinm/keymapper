@@ -1,35 +1,20 @@
-import Action from './Action'
+import { editableInputType } from "../editableInputType";
+import { Action } from "./Action";
 
-export default class FocusFirstInputAction extends Action {
-  public static hasValue: boolean = false
-
+export class FocusFirstInputAction extends Action {
   public run(): void {
-    const firstInput = this.findFirstInput()
-    firstInput && firstInput.focus()
+    const firstInput = this.findFirstInput();
+    firstInput && firstInput.focus();
   }
 
-  private findFirstInput(): HTMLInputElement|HTMLTextAreaElement|null {
-    const editableTypes = [
-      'date',
-      'datetime',
-      'datetime-local',
-      'email',
-      'month',
-      'number',
-      'password',
-      'search',
-      'tel',
-      'text',
-      'time',
-      'url',
-      'week'
-    ]
-
-    let editableInputs = []
-    for (let type of editableTypes) {
-      editableInputs.push(`input[type=${type}]`)
+  private findFirstInput() {
+    const editableInputQueries = [];
+    for (const type of editableInputType) {
+      editableInputQueries.push(`input[type=${type}]`);
     }
 
-    return document.querySelector(`${editableInputs.join(',')}, textarea`)
+    return document.querySelector<HTMLInputElement | HTMLTextAreaElement>(
+      `${editableInputQueries.join(",")}, textarea`,
+    );
   }
 }

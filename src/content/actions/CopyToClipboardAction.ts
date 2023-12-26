@@ -1,30 +1,35 @@
-import Action from './Action'
+import { Action } from "./Action";
 
-function copyToClipboard(string: string): void {
-  const textarea = document.createElement('textarea')
-  textarea.style.cssText = 'position: absolute; left: -100%;'
-  document.body.appendChild(textarea)
-  textarea.value = string
-  textarea.select()
-  document.execCommand('copy')
-  document.body.removeChild(textarea)
+const copyToClipboard = (text: string) => {
+  const textarea = document.createElement("textarea");
+  textarea.style.cssText = "position: absolute; left: -100%;";
+  document.body.appendChild(textarea);
+  textarea.value = text;
+  textarea.select();
+  document.execCommand("copy");
+  document.body.removeChild(textarea);
+};
+
+interface Variables {
+  title: string;
+  url: string;
+  [key: string]: string;
 }
+const format = (template: string, variables: Variables) =>
+  Object.keys(variables).reduce((accumulated, variableName) => {
+    return accumulated.replace(
+      "${" + variableName + "}",
+      variables[variableName],
+    );
+  }, template);
 
-function format(template: string, variables: object): string {
-  return Object.keys(variables).reduce((result, variableName) => {
-    return result.replace('${' + variableName + '}', variables[variableName])
-  }, template)
-}
-
-export default class CopyToClipboardAction extends Action {
-  public static hasValue: boolean = true
-
+export class CopyToClipboardAction extends Action {
   public run(): void {
     copyToClipboard(
       format(this.value, {
         title: document.title,
-        url: location.href
-      })
-    )
+        url: location.href,
+      }),
+    );
   }
 }

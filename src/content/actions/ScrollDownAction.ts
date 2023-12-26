@@ -1,9 +1,7 @@
-import Action from './Action'
+import { Action } from "./Action";
 
-export default class ScrollDownAction extends Action {
-  public static hasValue: boolean = false
-
-  public run() {
-    window.scrollBy(0, 100)
+export class ScrollDownAction extends Action {
+  public run(): void {
+    window.scrollBy(0, 100);
   }
 }

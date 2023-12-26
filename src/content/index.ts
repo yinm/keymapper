@@ -1,55 +1,35 @@
-import { detectKeyString } from 'key-string'
-import actions from './actions/index'
+import { actions } from "./actions";
+import detectKeyString from "./detectKeyString";
+import { storageKey } from "../const";
+import { editableInputType } from "./editableInputType";
 
-const getSettings = (): Promise<Settings> => {
-  return new Promise(resolve => {
-    chrome.storage.sync.get('settings', ({ settings }) => {
-      resolve(settings)
-    })
-  })
-}
-
-function isEditable(element: Element): boolean {
-  const tagName = element.tagName.toLowerCase()
-  const editableType = [
-    'date',
-    'datetime',
-    'datetime-local',
-    'email',
-    'month',
-    'number',
-    'password',
-    'search',
-    'tel',
-    'text',
-    'time',
-    'url',
-    'week'
-  ]
+const isEditable = (element: Element) => {
+  const tagName = element.tagName.toLowerCase();
 
   return (
     (element as HTMLElement).isContentEditable ||
-    tagName === 'textarea' ||
-    (tagName === 'input' &&
-      editableType.includes((element as HTMLInputElement).type))
-  )
-}
+    tagName === "textarea" ||
+    (tagName === "input" &&
+      editableInputType.includes((element as HTMLInputElement).type))
+  );
+};
 
-getSettings().then((settings: Settings) => {
-  window.addEventListener('keydown', event => {
-    if (isEditable(document.activeElement)) {
-      return
+chrome.storage.sync.get(storageKey).then((settings) => {
+  window.addEventListener("keydown", (event) => {
+    const activeElement = document.activeElement;
+    if (activeElement === null || isEditable(activeElement)) {
+      return;
     }
 
-    const keyString = detectKeyString(event)
-    const actionDefinition = settings.actionDefinitions[keyString]
+    const keyString = detectKeyString(event);
+    const actionDefinition = settings.settings.actionDefinitions[keyString];
     if (actionDefinition) {
-      if (actionDefinition.type === 'FocusFirstInput') {
-        // prevent keydown input
-        event.preventDefault()
+      if (actionDefinition.type === "FocusFirstInput") {
+        // prevent from inputting hot keys
+        event.preventDefault();
       }
 
-      new actions[actionDefinition.type](actionDefinition).run()
+      new actions[actionDefinition.type](actionDefinition).run();
     }
-  })
-})
+  });
+});

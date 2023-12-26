@@ -1,8 +1,10 @@
-export default class Action {
-  public value: string
+import { Hotkey } from "../../background";
 
-  public constructor({ value }) {
-    this.value = value
+export class Action {
+  public value: string;
+
+  public constructor({ value }: Hotkey) {
+    this.value = value;
   }
 
   public run() {}

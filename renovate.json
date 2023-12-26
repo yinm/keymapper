@@ -1,7 +1,0 @@
-{
-  "extends": [
-    "config:base",
-    ":timezone(Asia/Tokyo)",
-    ":automergePatch"
-  ]
-}

@@ -1,9 +1,7 @@
-import Action from './Action'
+import { Action } from "./Action";
 
-export default class GoBackAction extends Action {
-  public static hasValue: boolean = false
-
+export class GoBackAction extends Action {
   public run(): void {
-    history.back()
+    history.back();
   }
 }
