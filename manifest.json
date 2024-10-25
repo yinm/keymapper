@@ -8,7 +8,7 @@
     "48": "icons/48.png",
     "128": "icons/128.png"
   },
-  "version": "0.9.0",
+  "version": "0.9.1",
   "options_page": "index.html",
   "background": {
     "service_worker": "src/background.ts",
